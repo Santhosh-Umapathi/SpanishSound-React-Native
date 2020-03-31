@@ -162,7 +162,7 @@ export default class SpanishSound extends Component
               <Text style={[styles.buttonText]}>Nine</Text>
             </TouchableOpacity>
           </View>
-          <View style={{ flexDirection: "row" }}>
+          <View style={{ flexDirection: "row", justifyContent:'center' }}>
             <TouchableOpacity
               style={[styles.buttonTouch, { backgroundColor: colorList[10] }]}
               onPress={() => {
@@ -185,7 +185,7 @@ const styles = StyleSheet.create({
     alignItems:'center'
   },
   logoView: {
-    marginTop: 50,
+    marginTop: 20,
 
   },
   logoText: {
