@@ -1,5 +1,12 @@
 import React, { Component} from 'react';
-import { StyleSheet, Text, View, TouchableOpacity, Image } from 'react-native';
+import {
+  StyleSheet,
+  Text,
+  View,
+  TouchableOpacity,
+  Image,
+  ScrollView
+} from "react-native";
 import { Audio } from "expo-av";
 
 
@@ -10,7 +17,7 @@ const colorList = {
   4: "#67E6DC",
   5: "#6AB04A",
   6: "#F4C724",
-  7: "#FFF222",
+  7: "#0A3D62",
   8: "#99AAAB",
   9: "#4C4B4B",
   10: "#F5BCBA"
@@ -33,12 +40,6 @@ const soundList = {
 
 export default class SpanishSound extends Component
 {
-  constructor(props) {
-    super(props);
-    this.state = {
-      text: ""
-    };
-  }
 
   //Playsound function from Expo
   playSound = async (buttonNumber) =>
@@ -73,36 +74,105 @@ export default class SpanishSound extends Component
           <Text style={styles.logoText}>Spanish Sound App</Text>
           <Image
             source={require("./assets/logo.png")}
-            style={{ height: 100, width: 100, alignSelf: "center" }}
+            style={{ height: 100, width: 100, alignSelf: "center", marginBottom:10 }}
           />
         </View>
+        <ScrollView>
+          <View style={{ flexDirection: "row" }}>
+            <TouchableOpacity
+              style={[styles.buttonTouch, { backgroundColor: colorList[1] }]}
+              onPress={() => {
+                this.playSound("one");
+              }}
+            >
+              <Text style={[styles.buttonText]}>One</Text>
+            </TouchableOpacity>
 
-        <View style={{flexDirection: 'row'}}>
-          <TouchableOpacity
-            style={[styles.buttonTouch, { backgroundColor: colorList[1] }]}
-            onPress={() => {
-              this.playSound("one");
-            }}
-          >
-            <Text style={[styles.buttonText]}>One</Text>
-          </TouchableOpacity>
+            <TouchableOpacity
+              style={[styles.buttonTouch, { backgroundColor: colorList[2] }]}
+              onPress={() => {
+                this.playSound("two");
+              }}
+            >
+              <Text style={[styles.buttonText]}>Two</Text>
+            </TouchableOpacity>
 
-          <TouchableOpacity
-            style={[styles.buttonTouch, { backgroundColor: colorList[2] }]}
-            onPress={() => {
-              this.playSound("two");
-            }}
-          >
-            <Text style={[styles.buttonText]}>Two</Text>
-          </TouchableOpacity>
+            <TouchableOpacity
+              style={[styles.buttonTouch, { backgroundColor: colorList[3] }]}
+              onPress={() => {
+                this.playSound("three");
+              }}
+            >
+              <Text style={[styles.buttonText]}>Three</Text>
+            </TouchableOpacity>
+          </View>
+          <View style={{ flexDirection: "row" }}>
+            <TouchableOpacity
+              style={[styles.buttonTouch, { backgroundColor: colorList[4] }]}
+              onPress={() => {
+                this.playSound("four");
+              }}
+            >
+              <Text style={[styles.buttonText]}>Four</Text>
+            </TouchableOpacity>
 
+            <TouchableOpacity
+              style={[styles.buttonTouch, { backgroundColor: colorList[5] }]}
+              onPress={() => {
+                this.playSound("five");
+              }}
+            >
+              <Text style={[styles.buttonText]}>Five</Text>
+            </TouchableOpacity>
 
-        </View>
+            <TouchableOpacity
+              style={[styles.buttonTouch, { backgroundColor: colorList[6] }]}
+              onPress={() => {
+                this.playSound("six");
+              }}
+            >
+              <Text style={[styles.buttonText]}>Six</Text>
+            </TouchableOpacity>
+          </View>
+          <View style={{ flexDirection: "row" }}>
+            <TouchableOpacity
+              style={[styles.buttonTouch, { backgroundColor: colorList[7] }]}
+              onPress={() => {
+                this.playSound("seven");
+              }}
+            >
+              <Text style={[styles.buttonText]}>Seven</Text>
+            </TouchableOpacity>
 
+            <TouchableOpacity
+              style={[styles.buttonTouch, { backgroundColor: colorList[8] }]}
+              onPress={() => {
+                this.playSound("eight");
+              }}
+            >
+              <Text style={[styles.buttonText]}>Eight</Text>
+            </TouchableOpacity>
 
-
-
-
+            <TouchableOpacity
+              style={[styles.buttonTouch, { backgroundColor: colorList[9] }]}
+              onPress={() => {
+                this.playSound("nine");
+              }}
+            >
+              <Text style={[styles.buttonText]}>Nine</Text>
+            </TouchableOpacity>
+          </View>
+          <View style={{ flexDirection: "row" }}>
+            <TouchableOpacity
+              style={[styles.buttonTouch, { backgroundColor: colorList[10] }]}
+              onPress={() => {
+                this.playSound("ten");
+              }}
+            >
+              <Text style={[styles.buttonText]}>Ten</Text>
+            </TouchableOpacity>
+          </View>
+        </ScrollView>
       </View>
     );
   }
@@ -111,7 +181,8 @@ export default class SpanishSound extends Component
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#fff"
+    backgroundColor: "#fff",
+    alignItems:'center'
   },
   logoView: {
     marginTop: 50,
